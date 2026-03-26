@@ -1,4 +1,4 @@
-import { Youtube, Instagram, Music2 } from "lucide-react";
+import { Instagram } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -10,25 +10,13 @@ const Footer = () => {
           </p>
           <div className="flex space-x-4">
             <a
-              href="#"
-              className="text-zinc-400 hover:text-white transition-colors"
-              aria-label="YouTube"
-            >
-              <Youtube />
-            </a>
-            <a
-              href="#"
+              href="https://www.instagram.com/malibulakruz"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-zinc-400 hover:text-white transition-colors"
               aria-label="Instagram"
             >
               <Instagram />
-            </a>
-            <a
-              href="#"
-              className="text-zinc-400 hover:text-white transition-colors"
-              aria-label="BeatStars"
-            >
-              <Music2 />
             </a>
           </div>
         </div>
