@@ -29,20 +29,12 @@ const platforms: Platform[] = [
     href: "https://music.apple.com/ru/artist/malibu-la-kruz/1884333293",
   },
   {
-    name: "YouTube Music",
-    description: "Смотри клипы и слушай музыку",
-    color: "#FF0000",
-    bgColor: "rgba(255,0,0,0.1)",
-    icon: "Youtube",
-    href: "#",
-  },
-  {
     name: "ВКонтакте",
     description: "Подпишись и слушай бесплатно",
     color: "#0077FF",
     bgColor: "rgba(0,119,255,0.1)",
     icon: "Users",
-    href: "#",
+    href: "https://vk.ru/artist/malibulakruz",
   },
   {
     name: "Яндекс Музыка",
@@ -51,30 +43,6 @@ const platforms: Platform[] = [
     bgColor: "rgba(255,204,0,0.1)",
     icon: "Headphones",
     href: "https://music.yandex.ru/artist/25618058",
-  },
-  {
-    name: "Deezer",
-    description: "Высокое качество звука",
-    color: "#A238FF",
-    bgColor: "rgba(162,56,255,0.1)",
-    icon: "Radio",
-    href: "#",
-  },
-  {
-    name: "SoundCloud",
-    description: "Демо, миксы и эксклюзивы",
-    color: "#FF5500",
-    bgColor: "rgba(255,85,0,0.1)",
-    icon: "AudioWaveform",
-    href: "#",
-  },
-  {
-    name: "Boom",
-    description: "Российский стриминг",
-    color: "#E91E8C",
-    bgColor: "rgba(233,30,140,0.1)",
-    icon: "Zap",
-    href: "#",
   },
 ];
 
@@ -109,7 +77,7 @@ const StreamingSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
           {platforms.map((platform, index) => (
             <a
               key={platform.name}
