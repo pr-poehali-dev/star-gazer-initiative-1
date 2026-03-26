@@ -40,17 +40,19 @@ const AboutSection = () => {
           style={{ transform: `translateY(${(1 - scrollProgress) * 50}px)` }}
         >
           <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-blue-500/10 rounded-3xl transform -rotate-6"></div>
-            <div className="w-full aspect-square bg-gradient-to-br from-zinc-900 to-black rounded-3xl relative z-10 flex items-center justify-center border border-white/10">
-              <div className="text-center p-8">
-                <div className="w-40 h-40 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center shadow-2xl shadow-purple-900/50">
-                  <Icon name="Disc3" size={72} className="text-white" />
+            <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-white/0 rounded-3xl transform -rotate-3"></div>
+            <div className="w-full aspect-square rounded-3xl relative z-10 overflow-hidden shadow-2xl">
+              <img
+                src="https://cdn.poehali.dev/projects/409f6f8c-1919-4012-a1da-212c5297ff62/bucket/aace0ccd-deec-46a5-ac52-f2f092cb2881.jpg"
+                alt="ПОСЛЕДСТВИЯ 2005 — обложка релиза"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <div className="absolute bottom-6 left-6">
+                <div className="inline-block bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1 mb-2">
+                  <span className="text-xs text-white uppercase tracking-widest">Новый релиз · 2026</span>
                 </div>
-                <div className="inline-block bg-white/5 border border-white/10 rounded-full px-4 py-1 mb-3">
-                  <span className="text-xs text-zinc-400 uppercase tracking-widest">Новый релиз</span>
-                </div>
-                <p className="text-2xl font-bold text-white tracking-wide">ПОСЛЕДСТВИЯ</p>
-                <p className="text-zinc-500 text-sm mt-1">2005</p>
+                <p className="text-2xl font-bold text-white tracking-wide drop-shadow-lg">ПОСЛЕДСТВИЯ 2005</p>
               </div>
             </div>
           </div>
@@ -64,19 +66,12 @@ const AboutSection = () => {
               <span className="text-xs text-zinc-400 uppercase tracking-widest">Уже доступно</span>
             </div>
             <h2
-              className={`text-4xl md:text-6xl font-bold mb-2 text-white tracking-tight transition-all duration-500 delay-100 ${
+              className={`text-4xl md:text-6xl font-bold mb-6 text-white tracking-tight transition-all duration-500 delay-100 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
               }`}
             >
-              ПОСЛЕДСТВИЯ
+              ПОСЛЕДСТВИЯ 2005
             </h2>
-            <p
-              className={`text-2xl text-zinc-500 font-light mb-6 transition-all duration-500 delay-150 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
-              }`}
-            >
-              2005
-            </p>
             <p
               className={`text-lg mb-8 text-zinc-300 leading-relaxed transition-all duration-500 delay-200 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
