@@ -30,7 +30,7 @@ const Header = () => {
     >
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <a href="/" className="text-3xl font-bold tracking-tighter text-white">
-          SoundForge
+          ARTIST
         </a>
         <div className="md:hidden">
           <Button
@@ -50,10 +50,10 @@ const Header = () => {
           <ul className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8 p-4 md:p-0">
             <li>
               <button
-                onClick={() => scrollToSection("licenses")}
+                onClick={() => scrollToSection("streaming")}
                 className="text-white hover:text-purple-400 transition-colors"
               >
-                Лицензии
+                Слушать
               </button>
             </li>
             <li>
@@ -61,7 +61,7 @@ const Header = () => {
                 onClick={() => scrollToSection("about")}
                 className="text-white hover:text-purple-400 transition-colors"
               >
-                Обо мне
+                Об артисте
               </button>
             </li>
             <li>
@@ -77,11 +77,9 @@ const Header = () => {
         <Button
           variant="outline"
           className="hidden md:block border-white/20 text-white hover:bg-white/10"
-          asChild
+          onClick={() => document.getElementById("streaming")?.scrollIntoView({ behavior: "smooth" })}
         >
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            BeatStars
-          </a>
+          Слушать музыку
         </Button>
       </div>
     </header>

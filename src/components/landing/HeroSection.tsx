@@ -22,10 +22,10 @@ const HeroSection = () => {
   }, []);
 
   const stats = [
-    { icon: <Play className="w-6 h-6" />, label: "Продано битов", value: "500+" },
-    { icon: <Disc3 className="w-6 h-6" />, label: "Уникальных треков", value: "1000+" },
-    { icon: <Music2 className="w-6 h-6" />, label: "Довольных артистов", value: "200+" },
-    { icon: <AudioWaveform className="w-6 h-6" />, label: "Жанров", value: "10+" },
+    { icon: <Play className="w-6 h-6" />, label: "Стримов", value: "1M+" },
+    { icon: <Disc3 className="w-6 h-6" />, label: "Треков", value: "50+" },
+    { icon: <Music2 className="w-6 h-6" />, label: "Площадок", value: "8+" },
+    { icon: <AudioWaveform className="w-6 h-6" />, label: "Лет в музыке", value: "5+" },
   ];
 
   return (
@@ -42,12 +42,11 @@ const HeroSection = () => {
           <div className="text-center mb-16 animate-fade-in">
             <h1 className="text-6xl md:text-8xl font-bold mb-6 tracking-tight relative">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-zinc-500">
-                Подними свой звук
+                Официальный сайт
               </span>
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-zinc-400 max-w-3xl mx-auto">
-              Создаю уникальные биты, которые помогут артистам выделиться. От трэпа до лоу-фай — найди
-              свой идеальный звук и выведи музыку на новый уровень.
+              Музыкант. Автор. Исполнитель. Слушай новые треки на всех популярных площадках — выбери свою и наслаждайся музыкой прямо сейчас.
             </p>
             <div className="relative inline-block">
               <Button
@@ -55,18 +54,16 @@ const HeroSection = () => {
                 className="bg-white text-black hover:bg-zinc-200 text-lg px-8 py-6 rounded-full transition-all duration-300 hover:scale-105"
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
-                asChild
+                onClick={() => document.getElementById("streaming")?.scrollIntoView({ behavior: "smooth" })}
               >
-                <a href="#" target="_blank" rel="noopener noreferrer">
-                  <span className="relative z-10">Слушать биты</span>
-                  <span
-                    className={`ml-2 relative z-10 transition-transform duration-200 ${
-                      isHovered ? "translate-x-1" : ""
-                    }`}
-                  >
-                    &rarr;
-                  </span>
-                </a>
+                <span className="relative z-10">Слушать музыку</span>
+                <span
+                  className={`ml-2 relative z-10 transition-transform duration-200 ${
+                    isHovered ? "translate-x-1" : ""
+                  }`}
+                >
+                  &rarr;
+                </span>
               </Button>
             </div>
           </div>
