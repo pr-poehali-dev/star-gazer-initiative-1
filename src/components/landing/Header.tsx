@@ -61,7 +61,7 @@ const Header = () => {
                 onClick={() => scrollToSection("about")}
                 className="text-white hover:text-purple-400 transition-colors"
               >
-                Об артисте
+                Новый релиз
               </button>
             </li>
             <li>
