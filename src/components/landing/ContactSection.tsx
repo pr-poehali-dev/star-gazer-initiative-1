@@ -64,7 +64,10 @@ const ContactSection = () => {
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
         }`}
       >
-        <h2 className="text-5xl font-bold mb-10 text-center text-zinc-200">Связаться со мной</h2>
+        <h2 className="text-5xl font-bold mb-4 text-center text-zinc-200">Связаться со мной</h2>
+        <p className="text-center text-zinc-400 mb-10">
+          <a href="mailto:malibulakruz@gmail.com" className="hover:text-white transition-colors">malibulakruz@gmail.com</a>
+        </p>
         <div
           className={`max-w-md mx-auto bg-black/50 backdrop-blur-lg rounded-lg p-8 shadow-2xl border border-white/10 transition-all duration-500 delay-200 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
