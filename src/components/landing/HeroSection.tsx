@@ -42,7 +42,7 @@ const HeroSection = () => {
           <div className="text-center mb-16 animate-fade-in">
             <h1 className="text-6xl md:text-8xl font-bold mb-6 tracking-tight relative">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-zinc-500">
-                Официальный сайт
+                MALIBU LA KRUZ
               </span>
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-zinc-400 max-w-3xl mx-auto">
