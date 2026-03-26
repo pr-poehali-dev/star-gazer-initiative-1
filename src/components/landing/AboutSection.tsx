@@ -1,12 +1,6 @@
 import { useRef, useEffect, useState } from "react";
-import { Headphones, Music, Mic2, Award } from "lucide-react";
-
-const achievements = [
-  { icon: <Headphones className="w-6 h-6" />, label: "Лет в музыке", value: "5+" },
-  { icon: <Music className="w-6 h-6" />, label: "Выпущенных треков", value: "50+" },
-  { icon: <Mic2 className="w-6 h-6" />, label: "Живых выступлений", value: "30+" },
-  { icon: <Award className="w-6 h-6" />, label: "Стримов", value: "1M+" },
-];
+import { Button } from "@/components/ui/button";
+import Icon from "@/components/ui/icon";
 
 const AboutSection = () => {
   const ref = useRef<HTMLElement>(null);
@@ -16,17 +10,11 @@ const AboutSection = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
+        if (entry.isIntersecting) setIsVisible(true);
       },
       { threshold: 0.2 }
     );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
+    if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
   }, []);
 
@@ -38,7 +26,6 @@ const AboutSection = () => {
       const progress = Math.max(0, Math.min(1, 1 - rect.top / windowHeight));
       setScrollProgress(progress);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -53,40 +40,84 @@ const AboutSection = () => {
           style={{ transform: `translateY(${(1 - scrollProgress) * 50}px)` }}
         >
           <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-white/0 rounded-3xl transform -rotate-6"></div>
-            <div className="w-full aspect-square bg-gradient-to-br from-zinc-800 to-zinc-900 rounded-3xl relative z-10 flex items-center justify-center">
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-blue-500/10 rounded-3xl transform -rotate-6"></div>
+            <div className="w-full aspect-square bg-gradient-to-br from-zinc-900 to-black rounded-3xl relative z-10 flex items-center justify-center border border-white/10">
               <div className="text-center p-8">
-                <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center">
-                  <Music className="w-16 h-16 text-white" />
+                <div className="w-40 h-40 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center shadow-2xl shadow-purple-900/50">
+                  <Icon name="Disc3" size={72} className="text-white" />
                 </div>
-                <p className="text-zinc-400 text-lg">Фото артиста</p>
+                <div className="inline-block bg-white/5 border border-white/10 rounded-full px-4 py-1 mb-3">
+                  <span className="text-xs text-zinc-400 uppercase tracking-widest">Новый релиз</span>
+                </div>
+                <p className="text-2xl font-bold text-white tracking-wide">ПОСЛЕДСТВИЯ</p>
+                <p className="text-zinc-500 text-sm mt-1">2005</p>
               </div>
             </div>
           </div>
+
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Об артисте</h2>
-            <p className="text-lg mb-6 text-zinc-300">
-              Музыкант с душой и историей. Каждый трек — это личный опыт, эмоции и взгляд на мир, переведённые в звук. Музыка создаётся не для чартов — она создаётся для людей.
+            <div
+              className={`inline-block bg-white/5 border border-white/10 rounded-full px-4 py-1 mb-4 transition-all duration-500 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+              }`}
+            >
+              <span className="text-xs text-zinc-400 uppercase tracking-widest">Уже доступно</span>
+            </div>
+            <h2
+              className={`text-4xl md:text-6xl font-bold mb-2 text-white tracking-tight transition-all duration-500 delay-100 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+              }`}
+            >
+              ПОСЛЕДСТВИЯ
+            </h2>
+            <p
+              className={`text-2xl text-zinc-500 font-light mb-6 transition-all duration-500 delay-150 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+              }`}
+            >
+              2005
             </p>
-            <p className="text-lg mb-8 text-zinc-300">
-              Слушай новые релизы на всех площадках, следи за живыми выступлениями и будь в курсе всего нового — подписывайся и оставайся на связи.
+            <p
+              className={`text-lg mb-8 text-zinc-300 leading-relaxed transition-all duration-500 delay-200 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+              }`}
+            >
+              Новый трек MALIBU LA KRUZ уже на всех площадках. Слушай прямо сейчас — найди его там, где удобно.
             </p>
-            <div className="grid grid-cols-2 gap-6">
-              {achievements.map((achievement, index) => (
-                <div
-                  key={achievement.label}
-                  className={`bg-zinc-900/50 rounded-lg p-4 border border-white/10 transition-all duration-500 ${
-                    isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
-                  }`}
-                  style={{ transitionDelay: `${index * 100}ms` }}
-                >
-                  <div className="flex items-center mb-2">
-                    <div className="mr-2 text-white">{achievement.icon}</div>
-                    <div className="text-2xl font-bold text-white">{achievement.value}</div>
-                  </div>
-                  <div className="text-sm text-zinc-400">{achievement.label}</div>
-                </div>
-              ))}
+            <div
+              className={`flex flex-wrap gap-3 transition-all duration-500 delay-300 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+              }`}
+            >
+              <Button
+                className="bg-white text-black hover:bg-zinc-200 rounded-full px-6"
+                asChild
+              >
+                <a href="https://open.spotify.com/artist/4Neeqlt7dUonaPAJ9HEpjL?si=xZCNieFFQjihCfXcdWfNvQ" target="_blank" rel="noopener noreferrer">
+                  <Icon name="Music2" size={16} className="mr-2" />
+                  Spotify
+                </a>
+              </Button>
+              <Button
+                variant="outline"
+                className="border-white/20 text-white hover:bg-white/10 rounded-full px-6"
+                asChild
+              >
+                <a href="https://music.apple.com/ru/artist/malibu-la-kruz/1884333293" target="_blank" rel="noopener noreferrer">
+                  <Icon name="Music" size={16} className="mr-2" />
+                  Apple Music
+                </a>
+              </Button>
+              <Button
+                variant="outline"
+                className="border-white/20 text-white hover:bg-white/10 rounded-full px-6"
+                asChild
+              >
+                <a href="https://music.yandex.ru/artist/25618058" target="_blank" rel="noopener noreferrer">
+                  <Icon name="Headphones" size={16} className="mr-2" />
+                  Яндекс Музыка
+                </a>
+              </Button>
             </div>
           </div>
         </div>
