@@ -28,8 +28,8 @@ const Header = () => {
         isScrolled ? "bg-black/95 backdrop-blur-sm" : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <a href="/" className="text-3xl font-bold tracking-tighter text-white">
+      <div className="container mx-auto px-4 py-4 flex items-center justify-between relative">
+        <a href="/" className="text-3xl font-bold tracking-tighter text-white w-32">
           444
         </a>
         <div className="md:hidden">
@@ -45,7 +45,7 @@ const Header = () => {
         <nav
           className={`${
             isMenuOpen ? "flex" : "hidden"
-          } md:flex absolute md:relative top-full left-0 w-full md:w-auto bg-black/95 md:bg-transparent flex-col md:flex-row`}
+          } md:flex absolute md:static top-full left-0 w-full md:w-auto bg-black/95 md:bg-transparent flex-col md:flex-row md:absolute md:left-1/2 md:-translate-x-1/2`}
         >
           <ul className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8 p-4 md:p-0">
             <li>
@@ -76,10 +76,10 @@ const Header = () => {
         </nav>
         <Button
           variant="outline"
-          className="hidden md:block border-white/20 text-white hover:bg-white/10"
+          className="hidden md:block border-white/20 text-white hover:bg-white/10 w-32"
           onClick={() => document.getElementById("streaming")?.scrollIntoView({ behavior: "smooth" })}
         >
-          Слушать музыку
+          Слушать
         </Button>
       </div>
     </header>
