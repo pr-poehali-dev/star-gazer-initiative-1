@@ -18,7 +18,7 @@ const platforms: Platform[] = [
     color: "#1DB954",
     bgColor: "rgba(29,185,84,0.1)",
     icon: "Music2",
-    href: "#",
+    href: "https://open.spotify.com/artist/4Neeqlt7dUonaPAJ9HEpjL?si=xZCNieFFQjihCfXcdWfNvQ",
   },
   {
     name: "Apple Music",
@@ -26,7 +26,7 @@ const platforms: Platform[] = [
     color: "#FC3C44",
     bgColor: "rgba(252,60,68,0.1)",
     icon: "Music",
-    href: "#",
+    href: "https://music.apple.com/ru/artist/malibu-la-kruz/1884333293",
   },
   {
     name: "YouTube Music",
@@ -50,7 +50,7 @@ const platforms: Platform[] = [
     color: "#FFCC00",
     bgColor: "rgba(255,204,0,0.1)",
     icon: "Headphones",
-    href: "#",
+    href: "https://music.yandex.ru/artist/25618058",
   },
   {
     name: "Deezer",
