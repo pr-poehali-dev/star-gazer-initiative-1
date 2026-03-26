@@ -68,21 +68,7 @@ const HeroSection = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-            {stats.map((stat, index) => (
-              <div
-                key={stat.label}
-                className="text-center animate-fade-in"
-                style={{ animationDelay: `${0.2 + index * 0.1}s` }}
-              >
-                <div className="bg-zinc-900/50 rounded-xl p-6 backdrop-blur-lg border border-white/10 transition-all duration-300 hover:scale-105 hover:border-white/20">
-                  <div className="mb-2 text-white/70 flex justify-center">{stat.icon}</div>
-                  <div className="text-3xl font-bold mb-1 text-white">{stat.value}</div>
-                  <div className="text-sm text-zinc-400">{stat.label}</div>
-                </div>
-              </div>
-            ))}
-          </div>
+
         </div>
       </div>
     </section>
